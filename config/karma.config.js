@@ -14,8 +14,6 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        JASMINE,
-        JASMINE_ADAPTER,
         'app/js/angular/angular.min.js',
         'app/js/*.js',
         'test/lib/angular/*.js',
