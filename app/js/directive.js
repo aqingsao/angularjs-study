@@ -9,6 +9,7 @@ app.directive("supermane", function(){
 
 app.directive("supermana", function(){
   return {
+    // "A" is default
     restrict: "A",
     link: function(){
       alert("I'm supermanA")
