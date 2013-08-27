@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AngularJS Tutorials</title>
-  <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
-</head>
-<body>
-  <div ng-app="choreApp">
-    <div ng-controller="ChoreCtrl">
-      <kid done="logChore(chore)"></kid>
+  <head>
+    <title>AngularJS Tutorials</title>
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
+  </head>
+  <body>
+    <div ng-app="choreApp">
+      <div>
+        <p>Example 1:</p>
+        <kid1></kid1>
+        <kid1></kid1>
+      </div>
+      <div>
+        <p>Example 2:</p>
+        <kid2></kid2>
+        <kid2></kid2>
+      </div>
+      <div ng-controller="ChoreCtrl">
+        Example 3:
+        <kid3 done="logChore(chore)"></kid3>
+      </div>
     </div>
-  </div>
-  <script type="text/javascript" src="js/angular/angular.min.js"></script>
-  <script type="text/javascript" src="js/scope1.js"></script>
-</body>
+    <script type="text/javascript" src="js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/scope1.js"></script>
+  </body>
 </html>
