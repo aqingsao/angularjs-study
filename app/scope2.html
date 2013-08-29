@@ -5,13 +5,31 @@
   <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
 </head>
 <body>
-  <div ng-app="app">
-    <div ng-controller="AppCtrl">
-      <input type="text" ng-model="ctrlFlavor">
-      <div drink flavor="{{ctrlFlavor}}"></div>
-    </div>
+<div ng-app="app">
+  <div ng-controller="AppCtrl1">
+    Example 1: "&" in scope
+    <kid done="logChore(chore)"></kid>
   </div>
-  <script type="text/javascript" src="js/angular/angular.min.js"></script>
-  <script type="text/javascript" src="js/scope2.js"></script>
+
+  <div ng-controller="AppCtrl2">
+    <p>Example 2: "@" in scope</p>
+    <input type="text" ng-model="ctrlFlavor">
+
+    <div drink flavor="{{ctrlFlavor}}"></div>
+  </div>
+  <div ng-controller="AppCtrl3">
+    <p>Example 3: "=" in scope</p>
+    <input type="text" ng-model="ctrlFlavor">
+    <div eat flavor="ctrlFlavor"></div>
+  </div>
+  <div ng-controller="AppCtrl4">
+    <p>Example 4: "&" in scope</p>
+    <div phone dial="callHome(message)"></div>
+    <div phone dial="callHome(message)"></div>
+    <div phone dial="callHome(message)"></div>
+  </div>
+</div>
+<script type="text/javascript" src="js/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/scope2.js"></script>
 </body>
 </html>
