@@ -13,6 +13,10 @@
       <input type="text" ng-model="messagesByPromise">
       <h1>Improved Promise:</h1>
       <input type="text" ng-model="improvedPromise">
+      <h1>Super Promise:</h1>
+      <ul>
+        <li ng-repeat="message in superPromise.method()">{{message}}</li>
+      </ul>
     </div>
   <script type="text/javascript" src="js/angular/angular.min.js"></script>
   <script type="text/javascript" src="js/promise.js"></script>

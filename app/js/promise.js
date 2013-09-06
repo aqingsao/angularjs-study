@@ -19,9 +19,26 @@ myModule.factory('HelloWorld', function ($q, $timeout) {
     return deferred.promise;
   };
 
+  var getSuperPromise = function () {
+    var deferred = $q.defer();
+
+    $timeout(function () {
+      console.log("getSuperPromise")
+      deferred.resolve({
+        message: "hello message!",
+        method: function(){
+          return ["hello", "method"]
+        }
+      });
+    }, 2000);
+
+    return deferred.promise;
+  };
+
   return {
     getMessages: getMessages,
-    getMessagesByPromise: getMessagesByPromise
+    getMessagesByPromise: getMessagesByPromise,
+    getSuperPromise: getSuperPromise
   };
 
 });
@@ -29,13 +46,12 @@ myModule.factory('HelloWorld', function ($q, $timeout) {
 myModule.controller('HelloCtrl', function ($scope, HelloWorld) {
 
   HelloWorld.getMessages(function (messages) {
-    console.log("getMessages: " + messages)
     $scope.messages = messages;
   });
   HelloWorld.getMessagesByPromise().then(function (messages) {
-    console.log("getMessagesByPromise: " + messages)
     $scope.messagesByPromise = messages;
   });
 
   $scope.improvedPromise = HelloWorld.getMessagesByPromise();
+  $scope.superPromise = HelloWorld.getSuperPromise();
 });
