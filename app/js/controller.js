@@ -9,3 +9,19 @@ app.controller("AppCtrl", function($scope){
   }
   return $scope.AppCtrl = this;
 });
+
+var controllers = {};
+controllers.PhoneCtrl = function($scope){
+  this.sayHi = function(){
+    alert("hi");
+  }
+  return $scope.PhoneCtrl = this;
+}
+var directives = {};
+directives.panel = function(){
+  return {
+    restrict: "E"
+  }
+}
+app.controller(controllers);
+app.directive(directives);
